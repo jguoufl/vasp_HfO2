@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 use strict;
-my @runlist= ("Pca21","P21c","P21m"."P42nmc","Pbca","Pmn21","Pnma");
+my @runlist= ("Pca21","P21c","P21m","P42nmc","Pbca","Pmn21","Pnma");
 my @newlines;
 my $find="TOTEN";
 

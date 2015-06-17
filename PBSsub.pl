@@ -2,7 +2,7 @@
 use strict;
 
 # A my declares the listed variables to be local 
-my @runlist= ("Pca21","P21c","P21m"."P42nmc","Pbca","Pmn21","Pnma");
+my @runlist= ("Pca21","P21c","P21m","P42nmc","Pbca","Pmn21","Pnma");
 
 # iterate over folders
 foreach my $run (@runlist) {
