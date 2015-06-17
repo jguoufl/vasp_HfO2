@@ -1,0 +1,18 @@
+System = HfO2
+
+Accuracy parameters
+   PREC    =  Med       Med or ACCURATE
+#   SYMPREC =  1E-10
+
+Electronic Relaxation 1
+   ENCUT   =  300
+   ISTART  =  0      0-from scratch, 1-start with const. energy cut off
+   EDIFF   =  1E-6   stopping-criterion for ELM
+   IBRION  = -1       ionic relax: 0-MD 1-quasi-New 2-CG -1 no ionic steps
+#   ADDGRID =  .TRUE.  8 times more points than the standard "fine" grid 
+   SIGMA   =  0.02    broadening in eV -4-tet -1-fermi 0
+   GGA     =  PE
+
+Electric polarization calculation
+   LCALCPOL = .TRUE.   calculate electric polarization
+   ISMEAR = 0          0-Gaussian smearing  N(N>0)- method of Methfessel-Paxton order N

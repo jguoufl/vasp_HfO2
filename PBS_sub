@@ -1,0 +1,39 @@
+#!/bin/bash
+#
+#PBS -r n
+#PBS -N vasp
+#PBS -o vasp.out
+#PBS -e vasp.err
+#PBS -j oe
+#PBS -l walltime=12:29:00
+#PBS -l nodes=1:ppn=4:infiniband
+#PBS -l pmem=2400mb
+ 
+module load intel
+module load openmpi
+module load vasp
+
+ 
+VASP=vasp
+#VASP=vasp-cd
+#VASP=vasp-gp
+#VASP=tstvasp-cd
+#VASP=tstvasp-gp
+#VASP=vasp-ncaf
+ 
+cd $PBS_O_WORKDIR
+
+ln -sf ../INCAR INCAR
+cp ../000_POSCAR POSCAR
+ln -sf ../KPOINTS KPOINTS
+ln -sf ../POTCAR POTCAR
+mpiexec $VASP > vasp.log 2>&1
+
+# update the POSCAR file if relaxation run
+#cp -f CONTCAR POSCAR-RL
+
+
+
+
+
+
